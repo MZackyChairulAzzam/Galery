@@ -7,6 +7,15 @@
 
 <style>
 
+  body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("https://grainy-gradients.vercel.app/noise.svg");
+  opacity: 0.08;
+  pointer-events: none;
+}
+
   .slider::after {
   content: "";
   position: absolute;
@@ -244,3 +253,4 @@ slides.addEventListener("touchend", e => {
 </body>
 
 </html>
+
