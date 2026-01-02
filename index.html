@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Vionaaa 🤍</title>
+<title>For Viona 🤍</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
@@ -31,9 +31,7 @@ body{
   opacity:0;
   transition:opacity 1s ease;
 }
-.hero img.active{
-  opacity:1;
-}
+.hero img.active{opacity:1}
 .hero::after{
   content:"";
   position:absolute;
@@ -88,9 +86,7 @@ body{
   cursor:pointer;
   transition:.3s;
 }
-.gallery img:hover{
-  transform:scale(1.04);
-}
+.gallery img:hover{transform:scale(1.04)}
 
 /* LIGHTBOX */
 #lightbox{
@@ -154,13 +150,18 @@ body{
 
 <body>
 
-<!-- HERO -->
+<!-- HERO (PAKAI SEMUA FOTO) -->
 <div class="hero">
   <img src="foto/1.jpg" class="active">
   <img src="foto/2.jpg">
   <img src="foto/3.jpg">
   <img src="foto/4.jpg">
   <img src="foto/5.jpg">
+  <img src="foto/6.jpg">
+  <img src="foto/7.jpg">
+  <img src="foto/8.jpg">
+  <img src="foto/9.jpg">
+  <img src="foto/10.jpg">
 
   <div class="hero-text">
     <h1>Aldila Viona Afrodeta</h1>
@@ -199,7 +200,7 @@ body{
 </div>
 
 <script>
-/* HERO SLIDER */
+/* HERO SLIDESHOW – SEMUA FOTO */
 const heroImgs=document.querySelectorAll(".hero img");
 let hIndex=0;
 setInterval(()=>{
