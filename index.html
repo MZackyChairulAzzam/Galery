@@ -3,204 +3,170 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Vionaaa 🤍</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<title>For Viona</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
 body{
-  font-family:"Space Grotesk",sans-serif;
   background:#0f1115;
-  color:#eaeaea;
+  color:#eee;
   overflow-x:hidden;
 }
-
-/* INTRO */
-#intro{
-  position:fixed; inset:0;
-  background:#0f1115;
+.hero{
+  min-height:100vh;
   display:flex;
   align-items:center;
   justify-content:center;
-  z-index:9999;
+  text-align:center;
+  padding:40px;
+  animation:fadeIn 1.2s ease;
 }
-.intro-text{
-  font-size:20px;
-  letter-spacing:3px;
-  opacity:0;
-  animation:introFade 1.8s ease forwards;
+.hero h1{
+  font-size:2.2rem;
+  letter-spacing:1px;
 }
-@keyframes introFade{
-  to{opacity:1}
-}
-
-/* HERO */
-.hero{
-  height:100vh;
-  position:relative;
-}
-.hero img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  filter:grayscale(.15) brightness(.8);
-}
-.hero::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(to bottom,rgba(0,0,0,.3),rgba(0,0,0,.75));
-}
-.hero-text{
-  position:absolute;
-  bottom:90px;
-  left:24px;
-}
-.hero-text h1{
-  font-size:34px;
-  font-weight:600;
-}
-.hero-text .date{
-  margin-top:6px;
-  font-size:13px;
-  opacity:.7;
-}
-.hero-text p{
-  margin-top:18px;
-  max-width:420px;
-  line-height:1.7;
+.hero p{
+  margin-top:14px;
+  font-size:1rem;
   opacity:.85;
+  max-width:420px;
+}
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:none}
 }
 
-/* GALLERY */
-.section{
-  padding:56px 22px;
-}
 .gallery{
   display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:14px;
+  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:12px;
+  padding:30px;
 }
 .gallery img{
   width:100%;
-  aspect-ratio:1/1;
+  height:160px;
   object-fit:cover;
-  border-radius:14px;
+  border-radius:12px;
   cursor:pointer;
-  filter:grayscale(.2);
   transition:.3s;
 }
 .gallery img:hover{
-  filter:none;
-  transform:scale(1.04);
+  transform:scale(1.05);
 }
 
 /* LIGHTBOX */
-#lightbox{
+.lightbox{
   position:fixed;
   inset:0;
-  background:#000;
+  background:rgba(0,0,0,.85);
   display:none;
-  z-index:999;
+  align-items:center;
+  justify-content:center;
+  z-index:100;
 }
-#lightbox img{
-  width:100%;
-  height:100%;
-  object-fit:contain;
+.lightbox img{
+  max-width:90%;
+  max-height:80%;
+  border-radius:14px;
 }
 .close{
   position:absolute;
-  top:18px;
-  right:22px;
-  font-size:26px;
+  top:20px;
+  right:24px;
+  font-size:30px;
   cursor:pointer;
 }
-.nav{
+.arrow{
   position:absolute;
   top:50%;
   transform:translateY(-50%);
   font-size:40px;
-  padding:20px;
   cursor:pointer;
   user-select:none;
 }
-.nav.left{left:0}
-.nav.right{right:0}
-.counter{
-  position:absolute;
-  bottom:26px;
-  left:50%;
-  transform:translateX(-50%);
-  font-size:13px;
-  opacity:.6;
-}
+.left{left:20px}
+.right{right:20px}
 
-/* HEART (SUBTLE) */
+/* LOVE */
 .heart{
   position:fixed;
   color:#ff4d6d;
-  font-size:18px;
+  font-size:26px;
+  animation:float 1s ease forwards;
   pointer-events:none;
-  animation:heartPop 1s ease-out forwards;
 }
-@keyframes heartPop{
-  0%{transform:scale(.6);opacity:0}
-  40%{opacity:.8}
-  100%{opacity:0;transform:scale(1.6)}
+@keyframes float{
+  from{opacity:1;transform:translateY(0)}
+  to{opacity:0;transform:translateY(-60px)}
 }
 </style>
 </head>
 
 <body>
 
-<!-- INTRO -->
-<div id="intro">
-  <div class="intro-text">FOR YOU</div>
-</div>
-
-<!-- HERO -->
-<div class="hero">
-  <img src="foto/1.jpg">
-  <div class="hero-text">
+<section class="hero">
+  <div>
     <h1>Aldila Viona Afrodeta</h1>
-    <div class="date">30 Desember 2025</div>
     <p>
-      Terima kasih ya lu udah mau jadi pacar gw,<br>
-      tapi tolong jangan jauhin gw yaa… 🤍
+      Terima kasih ya lu udah mau jadi pacar gw.<br>
+      Tapi tolong jangan jauhin gw yaa…
+    </p>
+    <p style="margin-top:10px;font-size:.9rem;opacity:.6">
+      30 Desember 2025
     </p>
   </div>
-</div>
+</section>
 
-<!-- GALLERY -->
-<div class="section">
-  <div class="gallery">
-    <img src="foto/1.jpg">
-    <img src="foto/2.jpg">
-    <img src="foto/3.jpg">
-    <img src="foto/4.jpg">
-    <img src="foto/5.jpg">
-    <img src="foto/6.jpg">
-    <img src="foto/7.jpg">
-    <img src="foto/8.jpg">
-    <img src="foto/9.jpg">
-    <img src="foto/10.jpg">
-  </div>
-</div>
+<section class="gallery">
+  <img src="foto1.jpg">
+  <img src="foto2.jpg">
+  <img src="foto3.jpg">
+  <img src="foto4.jpg">
+  <img src="foto5.jpg">
+  <img src="foto6.jpg">
+  <img src="foto7.jpg">
+  <img src="foto8.jpg">
+  <img src="foto9.jpg">
+  <img src="foto10.jpg">
+</section>
 
-<!-- LIGHTBOX -->
-<div id="lightbox">
-  <div class="close">✕</div>
-  <div class="nav left">‹</div>
+<div class="lightbox" id="lightbox">
+  <span class="close" onclick="closeLB()">✕</span>
+  <span class="arrow left" onclick="prev()">❮</span>
   <img id="lbImg">
-  <div class="nav right">›</div>
-  <div class="counter" id="counter"></div>
+  <span class="arrow right" onclick="next()">❯</span>
 </div>
 
 <script>
-setTimeout(()=>intro.style.display="none",2000);
+const imgs=[...document.querySelectorAll('.gallery img')];
+let idx=0,clicks=0;
 
-/* HEART */
+imgs.forEach((img,i)=>{
+  img.addEventListener('click',()=>{
+    clicks++;
+    setTimeout(()=>clicks=0,250);
+    if(clicks===2) openLB(i);
+  });
+});
+
+function openLB(i){
+  idx=i;
+  lbImg.src=imgs[idx].src;
+  lightbox.style.display='flex';
+}
+function closeLB(){
+  lightbox.style.display='none';
+}
+function next(){
+  idx=(idx+1)%imgs.length;
+  lbImg.src=imgs[idx].src;
+}
+function prev(){
+  idx=(idx-1+imgs.length)%imgs.length;
+  lbImg.src=imgs[idx].src;
+}
+
+/* LOVE */
 document.addEventListener("click",e=>{
   const h=document.createElement("div");
   h.className="heart";
@@ -210,34 +176,6 @@ document.addEventListener("click",e=>{
   document.body.appendChild(h);
   setTimeout(()=>h.remove(),1000);
 });
-
-/* LIGHTBOX */
-const imgs=document.querySelectorAll(".gallery img");
-const lb=document.getElementById("lightbox");
-const lbImg=document.getElementById("lbImg");
-const counter=document.getElementById("counter");
-let idx=0;
-
-function update(){
-  lbImg.src=imgs[idx].src;
-  counter.textContent=`${idx+1} / ${imgs.length}`;
-}
-
-imgs.forEach((img,i)=>{
-  img.addEventListener("dblclick",()=>{
-    idx=i;
-    update();
-    lb.style.display="block";
-  });
-});
-
-document.querySelector(".close").onclick=()=>lb.style.display="none";
-document.querySelector(".nav.left").onclick=()=>{
-  idx=(idx-1+imgs.length)%imgs.length; update();
-};
-document.querySelector(".nav.right").onclick=()=>{
-  idx=(idx+1)%imgs.length; update();
-};
 </script>
 
 </body>
