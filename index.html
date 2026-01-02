@@ -163,32 +163,28 @@ body {
 <!-- SLIDESHOW -->
 <div class="slider">
   <div class="slides" id="slides">
-
-    <div class="slide">
-      <img src="foto/1.jpg">
-    </div>
-
-    <div class="slide">
-      <img src="foto/2.jpg">
-    </div>
-
-    <div class="slide">
-      <img src="foto/3.jpg">
-    </div>
-
-    <div class="slide">
-      <img src="foto/4.jpg">
-    </div>
-
+  <div class="slide"><img src="foto/1.jpg"></div>
+  <div class="slide"><img src="foto/2.jpg"></div>
+  <div class="slide"><img src="foto/3.jpg"></div>
+  <div class="slide"><img src="foto/4.jpg"></div>
+  <div class="slide"><img src="foto/5.jpg"></div>
+  <div class="slide"><img src="foto/6.jpg"></div>
+  <div class="slide"><img src="foto/7.jpg"></div>
+  <div class="slide"><img src="foto/8.jpg"></div>
+  </div>
   </div>
 
   <div class="dots">
-    <span class="dot active"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
+  <span class="dot active"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
   </div>
-</div>
+
 
 <!-- GALLERY -->
 <div class="gallery">
@@ -196,11 +192,15 @@ body {
   <img src="foto/2.jpg">
   <img src="foto/3.jpg">
   <img src="foto/4.jpg">
+  <img src="foto/5.jpg">
+  <img src="foto/6.jpg">
+  <img src="foto/7.jpg">
+  <img src="foto/8.jpg">
 </div>
 
 <script>
 let index = 0;
-const totalSlides = 4;
+const totalSlides = 8;
 const slides = document.getElementById("slides");
 const dots = document.querySelectorAll(".dot");
 
@@ -253,4 +253,5 @@ slides.addEventListener("touchend", e => {
 </body>
 
 </html>
+
 
