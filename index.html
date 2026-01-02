@@ -9,7 +9,6 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-
 body{
   background:#fafafa;
   color:#222;
@@ -17,10 +16,9 @@ body{
   overflow-x:hidden;
 }
 
-/* ========= INTRO LETTER ========= */
+/* INTRO */
 #letter{
-  position:fixed;
-  inset:0;
+  position:fixed;inset:0;
   background:#f4ede4;
   display:flex;
   align-items:center;
@@ -30,8 +28,7 @@ body{
   animation-delay:2.5s;
 }
 .envelope{
-  width:240px;
-  height:150px;
+  width:240px;height:150px;
   background:#fff;
   border-radius:8px;
   display:flex;
@@ -45,112 +42,79 @@ body{
 @keyframes scaleUp{to{transform:scale(1.15)}}
 @keyframes fadeOut{to{opacity:0;visibility:hidden}}
 
-/* ========= HERO ========= */
-.hero{
-  height:100vh;
-  position:relative;
-}
-.hero img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
+/* HERO */
+.hero{height:100vh;position:relative}
+.hero img{width:100%;height:100%;object-fit:cover}
 .hero::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(to bottom,rgba(0,0,0,.35),rgba(0,0,0,.7));
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(to bottom,rgba(0,0,0,.35),rgba(0,0,0,.7))
 }
 .hero-text{
-  position:absolute;
-  bottom:70px;
-  left:24px;
-  right:24px;
-  color:white;
+  position:absolute;bottom:70px;left:24px;right:24px;color:white
 }
 .hero-text h1{
   font-family:"Playfair Display",serif;
-  font-size:32px;
+  font-size:32px
 }
-.hero-text .date{
-  font-size:14px;
-  opacity:.8;
-  margin-top:6px;
-}
-.hero-text .quote{
-  margin-top:14px;
-  max-width:420px;
-  opacity:.9;
-}
+.hero-text .date{font-size:14px;opacity:.8;margin-top:6px}
+.hero-text .quote{margin-top:14px;max-width:420px;opacity:.9}
 
-/* ========= DECOR ========= */
+/* DECOR */
 .decor{
-  position:absolute;
-  top:40px;
-  right:20px;
-  font-size:28px;
-  opacity:.15;
+  position:absolute;top:40px;right:20px;
+  font-size:28px;opacity:.15
 }
 
-/* ========= SECTION ========= */
-.section{
-  padding:48px 20px;
-}
+/* SECTION */
+.section{padding:48px 20px}
 .section h2{
   font-family:"Playfair Display",serif;
-  font-size:22px;
-  margin-bottom:18px;
+  font-size:22px;margin-bottom:18px
 }
 
-/* ========= GALLERY ========= */
+/* GALLERY */
 .gallery{
   display:grid;
   grid-template-columns:repeat(2,1fr);
-  gap:14px;
+  gap:14px
 }
 .gallery img{
   width:100%;
   aspect-ratio:1/1;
   object-fit:cover;
   border-radius:18px;
-  cursor:pointer;
+  cursor:pointer
 }
 
-/* ========= LIGHTBOX ========= */
+/* LIGHTBOX */
 #lightbox{
-  position:fixed;
-  inset:0;
+  position:fixed;inset:0;
   background:#000;
   display:none;
-  z-index:999;
+  z-index:999
 }
 #lightbox img{
   width:100%;
   height:100%;
-  object-fit:contain;
+  object-fit:contain
 }
-
-/* arrows */
 .arrow{
-  position:absolute;
-  top:50%;
+  position:absolute;top:50%;
   transform:translateY(-50%);
-  font-size:40px;
-  color:white;
-  opacity:.6;
-  padding:20px;
-  user-select:none;
+  font-size:40px;color:white;
+  opacity:.6;padding:20px;
+  user-select:none
 }
 .arrow.left{left:0}
 .arrow.right{right:0}
 
-/* ========= HEART ========= */
+/* HEART */
 .heart{
   position:fixed;
   color:#ff6b8a;
   font-size:22px;
   pointer-events:none;
-  animation:pop 1.1s ease-out forwards;
+  animation:pop 1.1s ease-out forwards
 }
 @keyframes pop{
   0%{transform:scale(.4);opacity:0}
@@ -162,26 +126,23 @@ body{
 
 <body>
 
-<!-- INTRO -->
 <div id="letter">
   <div class="envelope">For You 🤍</div>
 </div>
 
-<!-- HERO -->
 <div class="hero">
   <img src="foto/1.jpg">
   <div class="decor">✿</div>
   <div class="hero-text">
-    <h1>Untuk Kamu, Aldila Viona Afrodeta</h1>
-    <div class="date">30 Maret 2025</div>
+    <h1>Untuk Kamu, [NAMA]</h1>
+    <div class="date">[12 Januari 2026]</div>
     <div class="quote">
-      Hai Viona gw tau gw banyak kurangnya,  
-      tapi gw sayang kok sama lu.
+      Hal kecil ini mungkin sederhana,  
+      tapi semuanya aku bikin dengan rasa yang sama.
     </div>
   </div>
 </div>
 
-<!-- GALLERY -->
 <div class="section">
   <h2>Moments</h2>
   <div class="gallery">
@@ -193,10 +154,11 @@ body{
     <img src="foto/6.jpg">
     <img src="foto/7.jpg">
     <img src="foto/8.jpg">
+    <img src="foto/9.jpg">
+    <img src="foto/10.jpg">
   </div>
 </div>
 
-<!-- LIGHTBOX -->
 <div id="lightbox">
   <div class="arrow left">‹</div>
   <img id="lb-img">
@@ -204,8 +166,7 @@ body{
 </div>
 
 <script>
-/* ========= HEART ON CLICK ========= */
-function spawnHeart(x,y){
+function heart(x,y){
   const h=document.createElement("div");
   h.className="heart";
   h.innerHTML="❤";
@@ -215,21 +176,15 @@ function spawnHeart(x,y){
   setTimeout(()=>h.remove(),1100);
 }
 
-document.addEventListener("click",e=>{
-  spawnHeart(e.clientX,e.clientY);
-});
+document.addEventListener("click",e=>heart(e.clientX,e.clientY));
 
-/* ========= HEART ON SWIPE ========= */
 let tx=0,ty=0;
 document.addEventListener("touchstart",e=>{
   tx=e.touches[0].clientX;
   ty=e.touches[0].clientY;
 });
-document.addEventListener("touchend",()=>{
-  spawnHeart(tx,ty);
-});
+document.addEventListener("touchend",()=>heart(tx,ty));
 
-/* ========= LIGHTBOX DOUBLE CLICK ========= */
 const imgs=document.querySelectorAll(".gallery img");
 const lb=document.getElementById("lightbox");
 const lbImg=document.getElementById("lb-img");
@@ -243,7 +198,6 @@ imgs.forEach((img,i)=>{
   });
 });
 
-/* ========= LIGHTBOX NAV ========= */
 document.querySelector(".arrow.left").onclick=()=>{
   idx=(idx-1+imgs.length)%imgs.length;
   lbImg.src=imgs[idx].src;
@@ -253,7 +207,6 @@ document.querySelector(".arrow.right").onclick=()=>{
   lbImg.src=imgs[idx].src;
 };
 
-/* swipe lightbox */
 let sx=0;
 lb.addEventListener("touchstart",e=>sx=e.touches[0].clientX);
 lb.addEventListener("touchend",e=>{
