@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Just For You 🤍</title>
+<title>For Aldila 🤍</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{
-  font-family:"Montserrat",sans-serif;
+  font-family:"Inter",sans-serif;
   background:#fffaf8;
   color:#2b2b2b;
   overflow-x:hidden;
@@ -18,26 +18,27 @@ body{
 
 /* ===== INTRO LETTER ===== */
 #intro{
-  position:fixed;inset:0;
-  background:#f6eee7;
+  position:fixed;
+  inset:0;
+  background:#f5ebe3;
   display:flex;
-  justify-content:center;
   align-items:center;
+  justify-content:center;
   z-index:9999;
 }
 .envelope{
-  width:260px;height:170px;
+  width:280px;height:180px;
   background:#fff;
+  border-radius:12px;
   position:relative;
-  border-radius:10px;
-  box-shadow:0 25px 60px rgba(0,0,0,.25);
+  box-shadow:0 30px 70px rgba(0,0,0,.25);
   overflow:hidden;
 }
 .flap{
   position:absolute;
   top:0;left:0;right:0;
-  height:85px;
-  background:#f2d6c9;
+  height:90px;
+  background:#e7cfc2;
   transform-origin:top;
   animation:openFlap 2s ease forwards;
 }
@@ -45,9 +46,9 @@ body{
   position:absolute;
   inset:0;
   display:flex;
-  justify-content:center;
   align-items:center;
-  font-family:"Libre Baskerville",serif;
+  justify-content:center;
+  font-family:"Playfair Display",serif;
   font-size:22px;
   opacity:0;
   animation:showText .8s ease forwards;
@@ -55,8 +56,7 @@ body{
 }
 
 @keyframes openFlap{
-  0%{transform:rotateX(0)}
-  100%{transform:rotateX(-140deg)}
+  to{transform:rotateX(-145deg)}
 }
 @keyframes showText{
   to{opacity:1}
@@ -74,34 +74,47 @@ body{
 }
 .hero::after{
   content:"";
-  position:absolute;inset:0;
-  background:linear-gradient(to bottom,rgba(0,0,0,.35),rgba(0,0,0,.75));
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    to bottom,
+    rgba(0,0,0,.35),
+    rgba(0,0,0,.65)
+  );
 }
 .hero-text{
   position:absolute;
-  bottom:70px;
+  bottom:80px;
   left:24px;
   right:24px;
   color:#fff;
 }
 .hero-text h1{
-  font-family:"Libre Baskerville",serif;
-  font-size:34px;
+  font-family:"Playfair Display",serif;
+  font-size:38px;
+  font-weight:700;
+}
+.hero-text .date{
+  margin-top:6px;
+  font-size:14px;
+  opacity:.85;
+  letter-spacing:1px;
 }
 .hero-text p{
-  margin-top:14px;
+  margin-top:16px;
+  max-width:440px;
+  line-height:1.6;
   opacity:.9;
-  max-width:420px;
 }
 
 /* ===== SECTION ===== */
 .section{
-  padding:48px 22px;
+  padding:52px 22px;
 }
 .section h2{
-  font-family:"Libre Baskerville",serif;
+  font-family:"Playfair Display",serif;
   font-size:22px;
-  margin-bottom:18px;
+  margin-bottom:22px;
 }
 
 /* ===== GALLERY ===== */
@@ -114,12 +127,12 @@ body{
   width:100%;
   aspect-ratio:1/1;
   object-fit:cover;
-  border-radius:20px;
+  border-radius:22px;
   cursor:pointer;
-  transition:.3s;
+  transition:.35s;
 }
 .gallery img:hover{
-  transform:scale(1.03);
+  transform:scale(1.04);
 }
 
 /* ===== LIGHTBOX ===== */
@@ -139,22 +152,22 @@ body{
   position:absolute;
   top:50%;
   transform:translateY(-50%);
-  font-size:40px;
+  font-size:42px;
   color:#fff;
   padding:20px;
-  opacity:.7;
+  opacity:.75;
   user-select:none;
 }
 .nav.left{left:0}
 .nav.right{right:0}
 .counter{
   position:absolute;
-  bottom:30px;
+  bottom:32px;
   left:50%;
   transform:translateX(-50%);
   color:#fff;
   font-size:14px;
-  opacity:.7;
+  opacity:.75;
 }
 
 /* ===== HEART ===== */
@@ -187,7 +200,8 @@ body{
 <div class="hero">
   <img src="foto/1.jpg">
   <div class="hero-text">
-    <h1>Untuk Kamu</h1>
+    <h1>Aldila Viona Afrodeta</h1>
+    <div class="date">30 Desember 2025</div>
     <p>
       Ini bukan tentang seberapa mewah tampilannya,  
       tapi tentang rasa yang aku taruh di setiap detailnya.
@@ -221,10 +235,10 @@ body{
 </div>
 
 <script>
-/* intro close */
+/* close intro */
 setTimeout(()=>document.getElementById("intro").style.display="none",2800);
 
-/* heart */
+/* hearts */
 function heart(x,y){
   const h=document.createElement("div");
   h.className="heart";
