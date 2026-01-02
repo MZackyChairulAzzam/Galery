@@ -6,164 +6,142 @@
 <title>Our Gallery</title>
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background: #0b0b0b;
-  font-family: Poppins, Arial, sans-serif;
-  color: white;
-  overflow-x: hidden;
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  background:#0b0b0b;
+  font-family:Poppins,Arial,sans-serif;
+  color:white;
+  overflow-x:hidden;
 }
 
 /* INTRO */
-#intro {
-  position: fixed;
-  inset: 0;
-  background: #0b0b0b;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  animation: fadeOut 0.8s ease forwards;
-  animation-delay: 2s;
+#intro{
+  position:fixed;inset:0;
+  background:#0b0b0b;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+  animation:fadeOut .8s ease forwards;
+  animation-delay:2s
 }
-
-.intro-heart {
-  font-size: 64px;
-  color: #ff6b8a;
-  animation: pulse 1.2s infinite;
+.intro-heart{
+  font-size:64px;
+  color:#ff6b8a;
+  animation:pulse 1.2s infinite
 }
 
 /* SLIDER */
-.slider {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
+.slider{
+  position:relative;
+  width:100%;
+  height:100vh;
+  overflow:hidden
 }
-
-.slides {
-  display: flex;
-  height: 100%;
-  transition: transform 0.8s ease;
+.slides{
+  display:flex;
+  height:100%;
+  transition:transform .8s ease
 }
-
-.slide {
-  min-width: 100%;
-  height: 100%;
+.slide{
+  min-width:100%;
+  height:100%
 }
-
-.slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.9);
+.slide img{
+  width:100%;
+  height:100%;
+  object-fit:cover
 }
 
 /* OVERLAY */
-.slider::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
+.slider::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
     to bottom,
-    rgba(0,0,0,0.5),
-    rgba(0,0,0,0.1),
-    rgba(0,0,0,0.6)
+    rgba(0,0,0,.6),
+    rgba(0,0,0,.1),
+    rgba(0,0,0,.6)
   );
-  pointer-events: none;
+  pointer-events:none
 }
 
 /* DOTS */
-.dots {
-  position: absolute;
-  bottom: 30px;
-  width: 100%;
-  text-align: center;
-  z-index: 10;
+.dots{
+  position:absolute;
+  bottom:24px;
+  width:100%;
+  text-align:center;
+  z-index:10
 }
-
-.dot {
-  width: 8px;
-  height: 8px;
-  background: rgba(255,255,255,0.4);
-  border-radius: 50%;
-  display: inline-block;
-  margin: 0 6px;
+.dot{
+  width:8px;height:8px;
+  border-radius:50%;
+  background:rgba(255,255,255,.4);
+  display:inline-block;
+  margin:0 6px
 }
-
-.dot.active {
-  background: #ff6b8a;
-}
+.dot.active{background:#ff6b8a}
 
 /* GALLERY */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  padding: 20px;
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+  padding:20px
+}
+.gallery img{
+  width:100%;
+  aspect-ratio:1/1;
+  object-fit:cover;
+  border-radius:16px;
+  cursor:pointer
 }
 
-.gallery img {
-  width: 100%;
-  aspect-ratio: 1/1;
-  object-fit: cover;
-  border-radius: 16px;
-  cursor: pointer;
+/* LIGHTBOX */
+#lightbox{
+  position:fixed;
+  inset:0;
+  background:black;
+  display:none;
+  z-index:9998
 }
-
-/* LIGHTBOX FULLSCREEN */
-#lightbox {
-  position: fixed;
-  inset: 0;
-  background: black;
-  display: none;
-  z-index: 9998;
-}
-
-#lightbox img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+#lightbox img{
+  width:100%;
+  height:100%;
+  object-fit:contain
 }
 
 /* HEART */
-.heart {
-  position: fixed;
-  color: rgba(255,107,138,0.9);
-  font-size: 22px;
-  animation: pop 1.2s ease-out forwards;
-  pointer-events: none;
+.heart{
+  position:fixed;
+  color:#ff6b8a;
+  font-size:22px;
+  pointer-events:none;
+  animation:pop 1.2s ease-out forwards
 }
 
-@keyframes pop {
-  0% { transform: scale(0.4); opacity: 0; }
-  50% { opacity: 1; transform: scale(1.3); }
-  100% { opacity: 0; transform: scale(2); }
+/* ANIMATION */
+@keyframes pop{
+  0%{transform:scale(.4);opacity:0}
+  50%{opacity:1;transform:scale(1.3)}
+  100%{opacity:0;transform:scale(2)}
 }
-
-@keyframes pulse {
-  0%,100% { transform: scale(1); opacity: .7; }
-  50% { transform: scale(1.3); opacity: 1; }
+@keyframes pulse{
+  0%,100%{transform:scale(1);opacity:.7}
+  50%{transform:scale(1.3);opacity:1}
 }
-
-@keyframes fadeOut {
-  to { opacity: 0; visibility: hidden; }
+@keyframes fadeOut{
+  to{opacity:0;visibility:hidden}
 }
 </style>
 </head>
 
 <body>
 
-<div id="intro">
-  <div class="intro-heart">❤</div>
-</div>
+<div id="intro"><div class="intro-heart">❤</div></div>
 
-<!-- SLIDER -->
 <div class="slider">
   <div class="slides" id="slides">
     <div class="slide"><img src="foto/1.jpg"></div>
@@ -188,7 +166,6 @@ body {
   </div>
 </div>
 
-<!-- GALLERY -->
 <div class="gallery">
   <img src="foto/1.jpg">
   <img src="foto/2.jpg">
@@ -200,61 +177,76 @@ body {
   <img src="foto/8.jpg">
 </div>
 
-<!-- LIGHTBOX -->
-<div id="lightbox">
-  <img id="lightbox-img">
-</div>
+<div id="lightbox"><img id="lightbox-img"></div>
 
 <script>
-let index = 0;
-const slides = document.getElementById("slides");
-const dots = document.querySelectorAll(".dot");
-const total = dots.length;
+/* PRELOAD */
+["1","2","3","4","5","6","7","8"].forEach(n=>{
+  const i=new Image();
+  i.src="foto/"+n+".jpg";
+})
 
-function showSlide() {
-  slides.style.transform = `translateX(-${index * 100}%)`;
-  dots.forEach(d => d.classList.remove("active"));
+let index=0;
+const slides=document.getElementById("slides");
+const dots=document.querySelectorAll(".dot");
+const total=dots.length;
+
+/* SLIDE */
+function showSlide(){
+  slides.style.transform=`translateX(-${index*100}%)`;
+  dots.forEach(d=>d.classList.remove("active"));
   dots[index].classList.add("active");
-  createHeart();
+  heart();
 }
+setInterval(()=>{
+  index=(index+1)%total;
+  showSlide();
+},3000);
 
-function createHeart() {
-  const h = document.createElement("div");
-  h.className = "heart";
-  h.innerHTML = "❤";
-  h.style.left = Math.random() * 80 + 10 + "vw";
-  h.style.top = Math.random() * 50 + 30 + "vh";
+/* HEART */
+function heart(){
+  const h=document.createElement("div");
+  h.className="heart";
+  h.innerHTML="❤";
+  h.style.left=Math.random()*80+10+"vw";
+  h.style.top=Math.random()*50+30+"vh";
   document.body.appendChild(h);
-  setTimeout(() => h.remove(), 1200);
+  setTimeout(()=>h.remove(),1200);
 }
 
-setInterval(() => {
-  index = (index + 1) % total;
-  showSlide();
-}, 3000);
-
-/* SWIPE */
-let startX = 0;
-slides.addEventListener("touchstart", e => startX = e.touches[0].clientX);
-slides.addEventListener("touchend", e => {
-  let endX = e.changedTouches[0].clientX;
-  if (startX - endX > 50) index = (index + 1) % total;
-  if (endX - startX > 50) index = (index - 1 + total) % total;
+/* SWIPE SLIDER */
+let sx=0;
+slides.addEventListener("touchstart",e=>sx=e.touches[0].clientX);
+slides.addEventListener("touchend",e=>{
+  let ex=e.changedTouches[0].clientX;
+  if(sx-ex>50) index=(index+1)%total;
+  if(ex-sx>50) index=(index-1+total)%total;
   showSlide();
 });
 
-/* LIGHTBOX */
-const lightbox = document.getElementById("lightbox");
-const lightboxImg = document.getElementById("lightbox-img");
+/* LIGHTBOX + SWIPE */
+const lb=document.getElementById("lightbox");
+const lbImg=document.getElementById("lightbox-img");
+let lbIndex=0;
 
-document.querySelectorAll(".gallery img").forEach(img => {
-  img.onclick = () => {
-    lightboxImg.src = img.src;
-    lightbox.style.display = "block";
-  };
+document.querySelectorAll(".gallery img").forEach((img,i)=>{
+  img.onclick=()=>{
+    lbIndex=i;
+    lbImg.src=img.src;
+    lb.style.display="block";
+  }
 });
 
-lightbox.onclick = () => lightbox.style.display = "none";
+let lxs=0;
+lb.addEventListener("touchstart",e=>lxs=e.touches[0].clientX);
+lb.addEventListener("touchend",e=>{
+  let lxe=e.changedTouches[0].clientX;
+  if(lxs-lxe>50) lbIndex=(lbIndex+1)%total;
+  if(lxe-lxs>50) lbIndex=(lbIndex-1+total)%total;
+  lbImg.src="foto/"+(lbIndex+1)+".jpg";
+});
+
+lb.onclick=()=>lb.style.display="none";
 </script>
 
 </body>
